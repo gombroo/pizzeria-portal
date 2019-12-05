@@ -1,10 +1,10 @@
 import React from 'react';
-import styles from './Dashboard.scss';
+import styles from './Homepage.scss';
 
-const Dashboard = () => (
+const Homepage = () => (
   <div className={styles.component}>
     <h2>Dashboard View</h2>
   </div>
 );
 
-export default Dashboard;
+export default Homepage;
