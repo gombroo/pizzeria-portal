@@ -3,7 +3,7 @@ import styles from './Tables.scss';
 
 const TablesBookingNew = () => (
   <div className={styles.component}>
-    <h2>Tables Booking New</h2>
+    <h2>Tables New Booking</h2>
   </div>
 );
 

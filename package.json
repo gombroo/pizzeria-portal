@@ -58,7 +58,6 @@
     "husky": "^3.1.0",
     "lint-staged": "^9.5.0",
     "redux-devtools-extension": "^2.13.8",
-    "watch": "^1.0.2",
-    "yarn": "^1.21.0"
+    "watch": "^1.0.2"
   }
 }
