@@ -1,4 +1,4 @@
-# Dashboard
+# Dashboard / Homepage
 
 - `/`
   - statystyki dzisiejszych zamówień (zdalne i lokalne)
