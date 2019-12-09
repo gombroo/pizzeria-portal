@@ -14,7 +14,6 @@
 
 - `/tables`
   - wybór daty i godziny
-
   - tabela z listą rezerwacji oraz wydarzeń
     - każda kolumna = 1 stolik
     - każdy wiersz = 30 minut

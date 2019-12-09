@@ -1,9 +1,10 @@
 import React from 'react';
-import styles from './Tables.scss';
+import styles from './Tables.module.scss';
+import Subtitle from '../../common/Subtitle/Subtitle';
 
 const TablesEventsEdit = () => (
   <div className={styles.component}>
-    <h2>Tables Events Edit</h2>
+    <Subtitle>Tables Events Edit</Subtitle>
   </div>
 );
 

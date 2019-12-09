@@ -1,9 +1,10 @@
 import React from 'react';
-import styles from './Waiter.scss';
+import styles from './Waiter.module.scss';
+import Subtitle from '../../common/Subtitle/Subtitle';
 
 const WaiterOrderNew = () => (
   <div className={styles.component}>
-    <h2>Waiter New Order</h2>
+    <Subtitle>Waiter New Order</Subtitle>
   </div>
 );
 
