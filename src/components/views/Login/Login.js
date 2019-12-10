@@ -10,20 +10,21 @@ import Grid from '@material-ui/core/Grid';
 import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import Typography from '@material-ui/core/Typography';
 import Container from '@material-ui/core/Container';
-import classes from './Login.module.scss';
+import styles from './Login.module.scss';
+//import Title from '../../common/Title/Title';
 
 export default function Login() {
   return (
-    <Container component="main" maxWidth="xs">
+    <Container maxWidth="xs">
       <CssBaseline />
-      <div className={classes.paper}>
-        <Avatar className={classes.avatar}>
+      <div className={styles.paper}>
+        <Avatar className={styles.avatar}>
           <LockOutlinedIcon />
         </Avatar>
         <Typography component="h1" align="center" variant="h5">
           Sign in
         </Typography>
-        <form className={classes.form} noValidate>
+        <form className={styles.form} noValidate>
           <TextField
             variant="outlined"
             margin="normal"
@@ -55,7 +56,7 @@ export default function Login() {
             fullWidth
             variant="contained"
             color="primary"
-            className={classes.submit}
+            className={styles.submit}
           >
             Sign In
           </Button>

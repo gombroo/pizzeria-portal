@@ -32,7 +32,7 @@ function App() {
           <MainLayout>
             <Switch>
               <Route exact path={`${process.env.PUBLIC_URL}/`} component={Homepage} />
-              <Route path={process.env.PUBLIC_UR + '/login'} component={Login} />
+              <Route path={process.env.PUBLIC_URL + '/login'} component={Login} />
               <Route path={process.env.PUBLIC_URL + '/tables'} component={Tables} />
               <Route path={process.env.PUBLIC_URL + '/waiter'} component={Waiter} />
               <Route path={process.env.PUBLIC_URL + '/kitchen'} component={Kitchen} />
