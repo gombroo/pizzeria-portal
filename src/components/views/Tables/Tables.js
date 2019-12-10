@@ -2,60 +2,56 @@ import React from 'react';
 import styles from './Tables.module.scss';
 import { Link } from 'react-router-dom';
 import { Button } from '@material-ui/core';
+import Table from '@material-ui/core/Table';
+import TableBody from '@material-ui/core/TableBody';
+import TableCell from '@material-ui/core/TableCell';
+import TableHead from '@material-ui/core/TableHead';
+import TableRow from '@material-ui/core/TableRow';
+import Paper from '@material-ui/core/Paper';
 import Title from '../../common/Title/Title';
-import MUIDataTable from 'mui-datatables';
 
-const columns = ['Time', 'Table 1', 'Table 2', 'Table 3', 'Table 4', 'Table 5'];
-
-const data = [
-  ['10:00', 'booking', 'booking', 'event', null, 'booking'],
-  ['10:30', 'event'],
-  ['11:00', null, 'booking', 'event', null, 'booking'],
-  ['11:30', null, 'booking', 'event', null, 'booking'],
-  ['12:00',  'event', 'booking', 'booking', null, 'booking'],
-  ['12:30',  'booking', 'booking', 'event', null, 'booking'],
-  ['13:00',  null, null, null, null ],
-  ['13:30',  null, null, null, null ],
-  ['14:00', 'booking', 'booking', 'event', null, 'booking'],
-  ['14:30', 'booking', 'booking', null, null, 'booking'],
-  ['15:00', null, 'booking', 'event', null, 'booking'],
+const dataTables = [
+  {id: '1', time: '12:00', status: 'free', order: null},
+  {id: '2', time: '12:30', status: 'thinking', order: null},
+  {id: '3', time: '13:00', status: 'ordered', order: 123},
+  {id: '4', time: '13:30', status: 'prepared', order: 234},
+  {id: '5', time: '14:00', status: 'delivered', order: 345},
+  {id: '6', time: '14:30', status: 'paid', order: 456},
 ];
 
-const options = {
-  filterType: null,
-  pagination: false,
-  filter: false,
-  search: false,
-  print: false,
-  download: false,
-  viewColumns: false,
-  selectableRowsHeader: false,
-  elevation: 2,
-};
+const Tables = () => {
 
-const Tables = () => (
-  <div className={styles.component}>
-    <Title>Tables View</Title>
-    <div className={styles.buttons}>
-      <Button component={Link} className={styles.button} color="primary" variant="outlined"
-        to={`${process.env.PUBLIC_URL}/tables/booking/new`}>
-        New Booking
-      </Button>
-      <Button component={Link} className={styles.button} color="primary" variant="outlined"
-        to={`${process.env.PUBLIC_URL}/tables/booking/book/:time`}>
-        Edit Booking
-      </Button>
-      <Button component={Link} className={styles.button} color="primary" variant="outlined"
-        to={`${process.env.PUBLIC_URL}/tables/events/new`}>
-        New Event
-      </Button>
-      <Button component={Link} className={styles.button} color="primary" variant="outlined"
-        to={`${process.env.PUBLIC_URL}/tables/events/event/:time`}>
-        Edit Event
-      </Button>
+  return(
+    <div className={styles.component}>
+      <Title>Tables</Title>
+      <Button component={Link} to={`/tables/bookings/booking/:id`}>Edit Booking</Button>
+      <Button component={Link} to={`/tables/events/event/:id`}>Edit Event</Button>
+      <Paper>
+        <Table>
+          <TableHead>
+            <TableRow>
+              <TableCell>Time</TableCell>
+              <TableCell>Table 1</TableCell>
+              <TableCell>Table 2</TableCell>
+              <TableCell>Table 3</TableCell>
+              <TableCell>Table 4</TableCell>
+              <TableCell>Table 5</TableCell>
+              <TableCell>Table 6</TableCell>
+            </TableRow>
+          </TableHead>
+          <TableBody>
+            {dataTables.map(row => (
+              <TableRow key={row.id} >
+                <TableCell scope="row" colSpan={7}>
+                  {row.time}
+                </TableCell>
+              </TableRow>
+            ))}
+          </TableBody>
+        </Table>
+      </Paper>
     </div>
-    <MUIDataTable data={data} columns={columns} options={options} />
-  </div>
-);
+  );
+};
 
 export default Tables;
