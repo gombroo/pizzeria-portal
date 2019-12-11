@@ -11,11 +11,11 @@ import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import Typography from '@material-ui/core/Typography';
 import Container from '@material-ui/core/Container';
 import styles from './Login.module.scss';
-//import Title from '../../common/Title/Title';
 
-export default function Login() {
+export default function SignIn() {
+
   return (
-    <Container maxWidth="xs">
+    <Container component="main" maxWidth="xs">
       <CssBaseline />
       <div className={styles.paper}>
         <Avatar className={styles.avatar}>
@@ -68,7 +68,7 @@ export default function Login() {
             </Grid>
             <Grid item>
               <Link href="#" variant="body2">
-                {'Don\'t have an account? Sign Up'}
+                {'Dont have an account?'}
               </Link>
             </Grid>
           </Grid>

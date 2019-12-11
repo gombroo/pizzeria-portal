@@ -9,6 +9,8 @@ import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 import Title from '../../common/Title/Title';
+import DatePicker from '../../features/DatePicker/DatePicker';
+import Box from '@material-ui/core/Box';
 
 const dataTables = [
   {id: '1', time: '12:00', status: 'free', order: null},
@@ -24,8 +26,26 @@ const Tables = () => {
   return(
     <div className={styles.component}>
       <Title>Tables</Title>
-      <Button component={Link} to={`/tables/bookings/booking/:id`}>Edit Booking</Button>
-      <Button component={Link} to={`/tables/events/event/:id`}>Edit Event</Button>
+      <Button component={Link} className={styles.button} color="primary" variant="outlined"
+        to={`/tables/booking/new`}>
+          New Booking
+      </Button>
+      <Button component={Link} className={styles.button} color="primary" variant="outlined"
+        to={`/tables/booking/book/:id`}>
+          Edit Booking
+      </Button>
+      <Button component={Link} className={styles.button} color="primary" variant="outlined"
+        to={`/tables/events/new`}>
+          New Event
+      </Button>
+      <Button component={Link} className={styles.button} color="primary" variant="outlined"
+        to={`/tables/events/event/:id`}>
+          Edit Event
+      </Button>
+
+      <Box component="span" m={1}>
+        <DatePicker />
+      </Box>
       <Paper>
         <Table>
           <TableHead>
@@ -47,6 +67,9 @@ const Tables = () => {
                 </TableCell>
               </TableRow>
             ))}
+            <TableRow>
+              <Button  className={styles.button} color="primary" variant="outlined">Edit</Button>
+            </TableRow>
           </TableBody>
         </Table>
       </Paper>
