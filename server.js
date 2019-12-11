@@ -11,6 +11,9 @@ const middlewares = jsonServer.defaults({
 });
 const port = process.env.PORT || 3131;
 
+server.use(middlewares);
+server.use(router);
+
 server.get(/^\/panel.*/, (req,res) =>{
   if(req.url === '/panel'){
     req.url += '/';
@@ -33,8 +36,5 @@ server.use(function(req, res, next) {
   }
   next();
 });
-
-server.use(middlewares);
-server.use(router);
 
 server.listen(port);

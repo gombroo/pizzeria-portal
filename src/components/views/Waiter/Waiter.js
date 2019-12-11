@@ -1,8 +1,8 @@
 import React from 'react';
 
-//import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
-import Title from '../../common/Title/Title';
+import PropTypes from 'prop-types';
+//import { Link } from 'react-router-dom';
+//import Title from '../../common/Title/Title';
 
 import styles from './Waiter.module.scss';
 import Table from '@material-ui/core/Table';
@@ -13,14 +13,14 @@ import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 import Button from '@material-ui/core/Button';
 
-{/*
+
 class Waiter extends React.Component {
   static propTypes = {
     fetchTables: PropTypes.func,
     // changeStatus: PropTypes.func,
     loading: PropTypes.shape({
       active: PropTypes.bool,
-      error: PropTypes.oneOf(PropTypes.bool,PropTypes.string),
+      error: PropTypes.oneOf([PropTypes.bool,PropTypes.string]),
     }),
     tables: PropTypes.any,
   }
@@ -120,8 +120,8 @@ class Waiter extends React.Component {
     }
   }
 }
-*/}
 
+{/*
 const demoContent = [
   {id: '1', status: 'free', order: null},
   {id: '2', status: 'thinking', order: null},
@@ -224,5 +224,6 @@ const Waiter = () => (
     </Paper>
   </div>
 );
+*/}
 
 export default Waiter;
