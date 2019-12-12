@@ -37,6 +37,13 @@ export const fetchFromAPI = () => {
   };
 };
 
+export const updateTableStatus = () => {
+  return (dispatch, getState) => {
+  /// ???
+  };
+};
+
+
 /* reducer */
 export default function reducer(statePart = [], action = {}) {
   switch (action.type) {
@@ -66,6 +73,12 @@ export default function reducer(statePart = [], action = {}) {
           active: false,
           error: action.payload,
         },
+      };
+    }
+    case UPDATE_STATUS: {
+      return {
+        ...statePart,
+        data: action.payload,
       };
     }
     default:

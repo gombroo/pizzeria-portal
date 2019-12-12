@@ -67,9 +67,6 @@ const Tables = () => {
                 </TableCell>
               </TableRow>
             ))}
-            <TableRow>
-              <Button  className={styles.button} color="primary" variant="outlined">Edit</Button>
-            </TableRow>
           </TableBody>
         </Table>
       </Paper>
