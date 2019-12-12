@@ -27,8 +27,8 @@ class Waiter extends React.Component {
     fetchTables();
   }
 
-  waiterClicked(){
-    // co sie ma stac jak kelner kliknie
+  waiterClicked(tableId, status){
+    this.props.updateStatus(tableId, status);
   }
 
   renderActions(status, tableId){
@@ -37,41 +37,47 @@ class Waiter extends React.Component {
         return (
           <>
             <Button component={Link} className={styles.button} color="primary" variant="outlined"
-              onClick={() => { this.waiterClicked(tableId, status); }}>
+              onClick={() => { this.waiterClicked(tableId, 'thinking'); }}>
               thinking
             </Button>
-            <Button component={Link} className={styles.button} color="primary" variant="outlined">
+            <Button component={Link} className={styles.button} color="primary" variant="outlined"
+              onClick={() => { this.waiterClicked(tableId, 'new order'); }}>
               new order
             </Button>
           </>
         );
       case 'thinking':
         return (
-          <Button component={Link} className={styles.button} color="primary" variant="outlined">
+          <Button component={Link} className={styles.button} color="primary" variant="outlined"
+            onClick={() => { this.waiterClicked(tableId, 'new order'); }}>
             new order
           </Button>
         );
       case 'ordered':
         return (
-          <Button component={Link} className={styles.button} color="primary" variant="outlined">
+          <Button component={Link} className={styles.button} color="primary" variant="outlined"
+            onClick={() => { this.waiterClicked(tableId, 'prepared'); }}>
           prepared
           </Button>
         );
       case 'prepared':
         return (
-          <Button component={Link} className={styles.button} color="primary" variant="outlined">
+          <Button component={Link} className={styles.button} color="primary" variant="outlined"
+            onClick={() => { this.waiterClicked(tableId, 'delivered'); }}>
           delivered
           </Button>
         );
       case 'delivered':
         return (
-          <Button component={Link} className={styles.button} color="primary" variant="outlined">
+          <Button component={Link} className={styles.button} color="primary" variant="outlined"
+            onClick={() => { this.waiterClicked(tableId, 'paid'); }}>
             paid
           </Button>
         );
       case 'paid':
         return (
-          <Button component={Link} className={styles.button} color="primary" variant="outlined">
+          <Button component={Link} className={styles.button} color="primary" variant="outlined"
+            onClick={() => { this.waiterClicked(tableId, 'free'); }}>
           free
           </Button>
         );
@@ -132,7 +138,7 @@ class Waiter extends React.Component {
                     )}
                   </TableCell>
                   <TableCell>
-                    {this.renderActions(row.status)}
+                    {this.renderActions(row.status, row.id)}
                   </TableCell>
                 </TableRow>
               ))}

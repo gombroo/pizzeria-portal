@@ -37,9 +37,18 @@ export const fetchFromAPI = () => {
   };
 };
 
-export const updateTableStatus = () => {
-  return (dispatch, getState) => {
-  /// ???
+export const updateTableStatus = (tableId, status) => {
+  return (dispatch) => {
+    dispatch(fetchStarted());
+
+    Axios
+      .put(`${api.url}/${api.tables}/${tableId}`, {status})
+      .then(res => {
+        dispatch(fetchFromAPI());
+      })
+      .catch(err => {
+        dispatch(fetchError(err.message || true));
+      });
   };
 };
 
